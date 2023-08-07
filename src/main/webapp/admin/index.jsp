@@ -41,7 +41,7 @@ html, body {
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="#">Visualização dos Produtos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Adiconar
+						<li class="nav-item"><a class="nav-link" href="cadastro_produto.jsp">Adicionar
 								Produto</a> <a class="nav-link" href="#">Alterar Produto</a> <a
 							class="nav-link" href="#">Deletar Produto</a></li>
 						<a class="nav-link" href="/senai">Ir para o Market</a>

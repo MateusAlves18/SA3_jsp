@@ -98,7 +98,7 @@
 							class="nav-link link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
 							href="admin">Fazer Login Cliente</a> <a
 							class="nav-link link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-							href="admin">Fazer Cadastro Cliente</a></li>
+							href="cadastro_usuario">Fazer Cadastro Cliente</a></li>
 					</div>
 					
 				</div>
