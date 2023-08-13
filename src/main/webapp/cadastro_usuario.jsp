@@ -55,16 +55,24 @@ html, body {
 	<div class="user-icon">
 		<i class="fas fa-user-circle fa-4x"></i>
 	</div>
-	<form method="post" action="loginmarket"
+		<%
+	String cadastro = (String) request.getAttribute("cadastro");
+	if (cadastro != null) {
+	%>
+	<div class="alert alert-danger" role="alert">Erro ao Realizar Cadastro!</div>
+	<%
+	}
+	%>
+	<form method="post" action="register_user"
 		class="custom-form col-md-6 max-width-form">
 		<div class="card border-secondary-subtle">
 			<div class="card-body">
 				<div class="mb-3">
 					<label for="nome" class="form-label">Nome</label> <input
-						name="nome" type="text" class="form-control" id="nome" value="" />
+						name="name" type="text" class="form-control" id="nome" value="" />
 				</div>
 				<div class="mb-3">
-					<label for="matricula" class="form-label">MatrÃ­cula</label> <input
+					<label for="matricula" class="form-label">Matricula</label> <input
 						name="matricula" type="text" class="form-control" id="matricula" />
 				</div>
 				<div class="mb-3">
@@ -73,25 +81,22 @@ html, body {
 				</div>
 				<div class="mb-3">
 					<label for="senha" class="form-label">Senha</label> <input
-						name="senha" type="password" class="form-control" id="senha" />
+						name="password" type="password" class="form-control" id="senha" />
 				</div>
 				<div class="mb-3">
-					<label for="endereco" class="form-label">EndereÃ§o</label> <input
+					<label for="endereco" class="form-label">Endereço</label> <input
 						name="endereco" type="text" class="form-control" id="endereco" />
 				</div>
 				<div class="row">
 					<div class="col-md-6 mb-3">
-						<label for="tipoCadastro" class="form-label">Tipo
-							de Cadastro:</label> <select name="tipoCadastro" class="form-select"
+						<label for="isCNPJ" class="form-label">Tipo
+							de Cadastro:</label> <select name="isCNPJ" class="form-select"
 							id="tipoCadastro">
-							<option value="cnpj">Com CNPJ</option>
-							<option value="sem_cnpj">Sem CNPJ</option>
+							<option value="1">Com CNPJ</option>
+							<option value="0">Sem CNPJ</option>
 						</select>
 					</div>
-					<div class="col-md-6 mb-3">
-						<label for="linkImg" class="form-label">Link da imagem</label> <input
-							name="linkImg" type="url" class="form-control" id="linkImg" />
-					</div>
+			
 				</div>
 				<div class="button-container text-center">
 					<button type="submit" id="Btn-cadastro" class="btn">

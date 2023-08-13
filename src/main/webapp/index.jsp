@@ -87,6 +87,15 @@
 </style>
 </head>
 <body>
+	<%
+	String cadastro = (String) request.getAttribute("cadastro");
+	if (cadastro != null) {
+	%>
+	<div class="alert alert-success" role="alert">Cadastro realizado
+		com sucesso!</div>
+	<%
+	}
+	%>
 	<header data-bs-theme="dark">
 		<div class="collapse text-bg-dark" id="navbarHeader">
 			<div class="container">
@@ -96,18 +105,27 @@
 							class="nav-link link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
 							href="admin">Ir para a Administração</a> <a
 							class="nav-link link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-							href="admin">Fazer Login Cliente</a> <a
+							href="login.jsp">Fazer Login Cliente</a> <a
 							class="nav-link link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-							href="cadastro_usuario">Fazer Cadastro Cliente</a></li>
+							href="cadastro_usuario.jsp">Fazer Cadastro Cliente</a></li>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
 		<div class="navbar navbar-dark bg-dark shadow-sm">
 			<div class="container">
-				<a href="#" class="navbar-brand d-flex align-items-center"><strong>Market</strong>
-				</a>
+				<a href="login_client?action=close"
+					class="navbar-brand d-flex align-items-center"><strong>Market
+						<%
+				String name = (String) session.getAttribute("name");
+				if (name != null) {
+					out.print("- Cliente - " + name + " - (Sair)");
+				}
+				%>
+
+
+				</strong> </a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"

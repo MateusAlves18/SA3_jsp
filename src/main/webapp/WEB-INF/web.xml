@@ -38,4 +38,24 @@
     <servlet-name>CloseAdmin</servlet-name>
     <url-pattern>/CloseAdmin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginClient</display-name>
+    <servlet-name>LoginClient</servlet-name>
+    <servlet-class>controller.LoginClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginClient</servlet-name>
+    <url-pattern>/LoginClient</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterUser</display-name>
+    <servlet-name>RegisterUser</servlet-name>
+    <servlet-class>controller.RegisterUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterUser</servlet-name>
+    <url-pattern>/RegisterUser</url-pattern>
+  </servlet-mapping>
 </web-app>
