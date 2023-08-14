@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,27 +16,32 @@ html, body {
 	width: 100%;
 }
 </style>
-<title>Login - Market</title>
+<title>Alteração de Produto - Market</title>
 </head>
 
 <body
 	class="d-flex justify-content-center align-items-center bg-body-secondary flex-column gap-4">
-	<h2 class="text-info">Faça login para acessar a Administração do Market</h2>
-	<h4 class="text-danger">${messageError}</h4>
-	<h4 class="text-warning">${message}</h4>
-	<form method="post" action="/senai/loginmarket">
+	<h2 class="text-info">Digite o ID do produto para realizar a
+		alteração</h2>
+	<%
+	String id = (String) request.getAttribute("id");
+	if (id != null) {
+	%>
+	<div class="alert alert-danger" role="alert">Id ${id} inválido!</div>
+	<%
+	}
+	%>
+	<a class="btn btn-primary" href="/senai/admin" role="button">Retornar a Administração</a>
+	<form method="get" action="/senai/alter_product">
 		<div
 			class="d-flex justify-content-center align-items-center flex-column border border-5 rounded-3 border-secondary-subtle border-black p-5">
 
 			<div class="mb-3">
-				<label for="user" class="form-label">Usuario</label> <input
-					name="user" type="text" class="form-control" id="user" value="${user}">
+				<label for="id" class="form-label">Id do Produto</label> <input
+					name="id" type="number" class="form-control" id="id">
 			</div>
-			<div class="mb-3">
-				<label for="password" class="form-label">Senha</label> <input
-					name="password" type="password" class="form-control" value="${password}" id="password">
-			</div>
-			<button type="submit" class="btn btn-primary">Fazer Login</button>
+
+			<button type="submit" class="btn btn-primary">Buscar Produto</button>
 		</div>
 	</form>
 
